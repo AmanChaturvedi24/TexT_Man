@@ -49,6 +49,14 @@ export default function Textbox(props) {
    }
 
 
+   const removeSpace = () => {
+
+    let newText=Text.split(/[ ] + /).join(" ");
+     
+     SetText(newText)
+   }
+
+
   const handleOnChange = (event) => {
     SetText(event.target.value)
   }
@@ -79,6 +87,7 @@ export default function Textbox(props) {
         <button className="btn btn-primary mx-2 my-1" onClick={reverseWordingsClick}>Reverse Wordings</button>
         <button className="btn btn-primary mx-2 my-1" onClick={reverseWordingsInplaceClick}>Reverse Text Inplace</button>
         <button className="btn btn-primary mx-2 my-1" onClick={clearClick}>Clear Text</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={removeSpace}>Remove Extra Space</button>
       </div>
       <div className="container my-3">
         <h2>Text summary</h2>
