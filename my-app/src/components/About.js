@@ -1,37 +1,37 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
 export default function About() {
-   
-    const[myStyle,setMyStyle]=useState(
-        {
-            color: 'white',
-            backgroundColor: '#292524'
-        })
-        const [BtnText, setBtnText] = useState("Enable Light Mode");
-        const [btnClass, setbtnClass] = useState("btn btn-dark my-3");
-   const darkHandleClick = ()=>{
-    if(myStyle.color === 'white'){
-        setMyStyle({
-            color: '#292524',
-            backgroundColor: 'white'
-        })
-        setBtnText("Enable Dark Mode")
-        setbtnClass("btn btn-light my-3")
+
+  const [myStyle, setMyStyle] = useState(
+    {
+      color: 'white',
+      backgroundColor: '#292524'
+    })
+  const [BtnText, setBtnText] = useState("Enable Light Mode");
+  const [btnClass, setbtnClass] = useState("btn btn-dark my-3");
+  const darkHandleClick = () => {
+    if (myStyle.color === 'white') {
+      setMyStyle({
+        color: '#292524',
+        backgroundColor: 'white'
+      })
+      setBtnText("Enable Dark Mode")
+      setbtnClass("btn btn-light my-3")
     }
-    else{
-        setMyStyle({
-            color: 'white',
-            backgroundColor: '#292524',
-        })
-        setBtnText("Enable Dark Mode")
-        setbtnClass("btn btn-dark my-3")
+    else {
+      setMyStyle({
+        color: 'white',
+        backgroundColor: '#292524',
+      })
+      setBtnText("Enable Dark Mode")
+      setbtnClass("btn btn-dark my-3")
     }
-   }
+  }
 
 
   return (
     <div className="container" style={myStyle}>
-        <h1 className="my-2">About Us</h1>
+      <h1 className="my-2">About Us</h1>
       <div className="accordion" style={myStyle} id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
@@ -131,7 +131,7 @@ export default function About() {
         </div>
       </div>
       <div className="container my-1">
-      <button  onClick={darkHandleClick} type="button" className={btnClass}>{BtnText}</button>
+        <button onClick={darkHandleClick} type="button" className={btnClass}>{BtnText}</button>
       </div>
     </div>
   );
