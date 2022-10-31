@@ -1,8 +1,15 @@
 import "./App.css";
 import React, { useState } from "react";
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import Textbox from "./components/Textbox";
 import Navbar from "./components/Navbar";
+import About from "./components/About";
+
+
 function App() {
   const [mood, setmood] = useState("light");
 
@@ -17,13 +24,19 @@ function App() {
     }
   };
   return (
-    <>
+    <Router>
       <Navbar title="TexT_Man" mode={mood} toggleHandle={toggleHandle} />
-      <div className="container my-3">
-        <Textbox heading="Enter the text to analyze below" mode={mood} />
-        {/* <About/> */}
-      </div>
-    </>
+        <div className="container my-3">
+      <Routes>
+        <Route exact path="/about" element={<About mode={mood}/>}/>
+         
+        <Route index path="/" element={
+          <Textbox heading="Enter the text to analyze below" mode={mood} />
+        }/>
+      </Routes>
+        </div>
+
+    </Router>
   );
 }
 
