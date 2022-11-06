@@ -1,13 +1,13 @@
 import "./App.css";
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+// } from "react-router-dom";
 import Textbox from "./components/Textbox";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
+// import About from "./components/About";
 
 
 function App() {
@@ -24,19 +24,23 @@ function App() {
     }
   };
   return (
-    <Router>
+    // <Router>
+    <>
       <Navbar title="TexT_Man" mode={mood} toggleHandle={toggleHandle} />
         <div className="container my-3">
-      <Routes>
-        <Route exact path="/about" element={<About mode={mood}/>}/>
+      {/* <Routes> */}
+        {/* <Route exact path="/about" element={ */}
+        {/* <About mode={mood}/> */}
+        {/*  }/> */}
          
-        <Route index path="/" element={
+        {/* <Route index path="/" element={ */}
           <Textbox heading="Enter the text to analyze below" mode={mood} />
-        }/>
-      </Routes>
+        {/* }/> */}
+      {/* </Routes> */}
         </div>
 
-    </Router>
+    {/* </Router> */}
+    </>
   );
 }
 
