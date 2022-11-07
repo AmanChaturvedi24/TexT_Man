@@ -51,7 +51,7 @@ export default function Textbox(props) {
   const [Text, SetText] = useState("");
   const wordcnt = () => {
     if (Text === "") return 0;
-    else return Text.split(" ").length;
+    else return Text.split(/\s+/).length;
   };
   return (
     <>
